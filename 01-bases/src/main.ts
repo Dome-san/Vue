@@ -13,7 +13,7 @@ import viteLogo from '/vite.svg';
 // import './bases/08-promises';
 // import './bases/09-fetch-api';
 // import './bases/10-axios';
-import './bases/11-async-await';
+// import './bases/11-async-await';
 
 
 
