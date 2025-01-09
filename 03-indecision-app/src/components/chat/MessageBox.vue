@@ -1,5 +1,6 @@
 <template>
   <div class="bg-white p-4 flex items-center">
+    <!-- Campo de entrada de texto -->
     <input
       type="text"
       placeholder="Type your message..."
@@ -7,10 +8,13 @@
       v-model="message"
       @keypress.enter="sendMessage"
     />
+
+    <!-- Botón para enviar mensaje -->
     <button
       class="bg-blue-500 text-white rounded-full p-2 ml-2 hover:bg-blue-600 focus:outline-none"
       @click="sendMessage"
     >
+      <!-- Icono SVG -->
       <svg
         width="20px"
         height="20px"
@@ -37,15 +41,18 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+// Define los eventos que este componente puede emitir
 const emits = defineEmits<{
   sendMessage: [text: string];
 }>();
 
+// Estado reactivo para el texto del mensaje
 const message = ref('');
 
+// Función para enviar el mensaje
 const sendMessage = () => {
-  if (!message.value) return;
-  emits('sendMessage', message.value);
-  message.value = '';
+  if (!message.value) return; // No hacer nada si el mensaje está vacío
+  emits('sendMessage', message.value); // Emitir el evento con el contenido del mensaje
+  message.value = ''; // Limpiar el campo de entrada después de enviar
 };
 </script>

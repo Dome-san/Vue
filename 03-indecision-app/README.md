@@ -1,39 +1,65 @@
 # indecision-app
 
-This template should help get you started developing with Vue 3 in Vite.
+Esta es una aplicación de chat interactivo desarrollada con **Vue 3** y **TypeScript**. Simula un chat donde los usuarios pueden enviar mensajes y recibir respuestas automáticas desde la API de [yesno.wtf](https://yesno.wtf/api).
 
-## Recommended IDE Setup
+## Características
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Mensajería interactiva:**
 
-## Type Support for `.vue` Imports in TS
+  - Los usuarios pueden escribir y enviar mensajes.
+  - Si el mensaje termina con un signo de interrogación (`?`), se obtiene una respuesta automatizada de la API.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Interfaz dinámica:**
 
-## Customize configuration
+  - Mensajes diferenciados por usuario (derecha) y respuestas (izquierda).
+  - Se adjuntan imágenes en las respuestas (proporcionadas por la API).
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **Reacciones:**
 
-## Project Setup
+  - Los mensajes pueden recibir reacciones como 👍, ❤️, 😂, 😢.
 
-```sh
-npm install
-```
+- **Indicador de carga:**
 
-### Compile and Hot-Reload for Development
+  - Mientras se espera la respuesta de la API, se muestra un indicador visual.
 
-```sh
-npm run dev
-```
+- **Desplazamiento automático:**
+  - El chat se desplaza automáticamente hacia el último mensaje enviado.
 
-### Type-Check, Compile and Minify for Production
+## Componentes principales
 
-```sh
-npm run build
-```
+- **`ChatMessages`**: Muestra la lista de mensajes con auto-desplazamiento.
+- **`MessageBox`**: Entrada de texto para que el usuario escriba mensajes.
+- **`ChatBubble`**: Representación visual de cada mensaje.
+- **`ReactionBox`**: Opciones para agregar reacciones a los mensajes.
+- **`SvgLoading`**: Indicador de carga animado.
 
-### Lint with [ESLint](https://eslint.org/)
+## Lógica principal
 
-```sh
-npm run lint
-```
+La lógica de la aplicación está centralizada en el composable `useChat`, que maneja:
+
+- La lista de mensajes (`messages`).
+- El estado de carga (`isLoading`).
+- La lógica para obtener respuestas de la API.
+
+## Uso de la API
+
+Se usa la API de [yesno.wtf](https://yesno.wtf/api) para obtener:
+
+- Respuestas automáticas: "yes", "no" o "maybe".
+- Imágenes asociadas a las respuestas.
+
+## Dependencias
+
+- **`typescript`**: Lenguaje tipado que mejora la escalabilidad del código.
+- **`eslint`**: Herramienta para analizar y encontrar errores en el código.
+- **`prettier`**: Formateador de código.
+- **`tailwindcss`**: Framework de diseño CSS basado en utilidades.
+- **`vite`**: Herramienta de construcción rápida para aplicaciones modernas.
+- **`vite-plugin-vue-devtools`**: Extensión para facilitar la depuración en Vue.
+
+## Cómo ejecutar el proyecto
+
+1. Copia o abre este repositorio.
+2. En la terminal que usas:
+
+   npm run dev
