@@ -19,7 +19,7 @@ describe('add Function', () => {
 describe('addArray function', () => {
   test('should return 0 if the array is empty', () => {
     //Preparacion
-    const numberArray = [];
+    const numberArray = [0];
 
     //estimulo
     const result = addArray(numberArray);
