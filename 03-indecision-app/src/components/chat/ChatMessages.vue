@@ -38,7 +38,8 @@ const props = defineProps<Props>();
 const chatRef = ref<HTMLDivElement | null>(null);
 
 // Observador para desplazar automáticamente al final del chat cuando cambian los mensajes
-watch(props.messages, () => {
+// Para el testing cambiar (props.messages) por (props)
+watch(props, () => {
   setTimeout(() => {
     chatRef.value?.scrollTo({
       top: chatRef.value.scrollHeight,
