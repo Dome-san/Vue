@@ -12,7 +12,6 @@ export const usePokemonGame = () => {
     const randomIndex = Math.floor(Math.random() * pokemonOptions.value.length);
     return pokemonOptions.value[randomIndex];
   });
-  console.log(randomPokemon);
 
   const isLoading = computed(() => pokemons.value.length === 0);
 
