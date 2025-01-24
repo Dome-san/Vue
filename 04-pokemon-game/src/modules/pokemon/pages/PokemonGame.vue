@@ -13,6 +13,7 @@
         v-if="gameStatus !== GameStatus.Playing"
         @click="getNextRound(4)"
         class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-800 transition-all"
+        data-test-id="btn-new-game"
       >
         Prueba otra vez
       </button>
