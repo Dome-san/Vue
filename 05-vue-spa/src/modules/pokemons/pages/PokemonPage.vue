@@ -2,9 +2,8 @@
   <section class="flex flex-col items-center">
     <div class="flex flex-row">
       <RouterLink
-        :to="{ name: 'pokemon', params: { id: id - 1 } }"
-        @click="prev"
         class="bg-blue-800 text-white rounded-l-md border-r border-gray-100 py-2 hover:bg-red-700 hover:text-white px-3 mr-5"
+        :to="{ name: 'pokemon', params: { id: id - 1 } }"
       >
         <div class="flex flex-row align-middle">
           <svg
@@ -26,8 +25,8 @@
         Pokemon <small class="text-blue-500">#{{ id }}</small>
       </h1>
       <RouterLink
-        :to="{ name: 'pokemon', params: { id: id + 1 } }"
         class="bg-blue-800 text-white rounded-r-md py-2 border-l border-gray-200 hover:bg-red-700 hover:text-white px-3 ml-5"
+        :to="{ name: 'pokemon', params: { id: id + 1 } }"
       >
         <div class="flex flex-row align-middle">
           <span class="mr-2">Next</span>
