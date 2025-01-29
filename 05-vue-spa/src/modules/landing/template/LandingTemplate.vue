@@ -15,6 +15,7 @@
           <RouterLink to="/contact"> Contact </RouterLink>
         </div>
         <div class="space-x-4">
+          <!-- exact-active-class="underline font-semibold" -->
           <RouterLink to="/pokemon/1"> Pokemons </RouterLink>
           <RouterLink to="/auth"> Login </RouterLink>
         </div>
@@ -24,7 +25,12 @@
 
     <!-- Main -->
     <main class="flex-1 flex items-center justify-center">
-      <RouterView />
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
+      <!-- <RouterView /> -->
     </main>
     <!-- Fin Main -->
 
