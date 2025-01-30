@@ -1,6 +1,5 @@
 import PokemonPage from '@/modules/pokemons/pages/PokemonPage.vue';
 import { mount, RouterLinkStub } from '@vue/test-utils';
-import { RouterLink } from 'vue-router';
 
 describe('<PokemonPage/>', () => {
   const wrapper = mount(PokemonPage, {
