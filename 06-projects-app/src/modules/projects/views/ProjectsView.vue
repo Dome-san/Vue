@@ -11,13 +11,31 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(project, index) in projectsStore.projectList" :key="project.id" class="hover">
+        <tr
+          v-for="(project, index) in projectsStore.projectsWithcompletion"
+          :key="project.id"
+          class="hover"
+        >
           <th>{{ index + 1 }}</th>
-          <td>{{ project.name }}</td>
-          <td>{{ project.tasks.length }}</td>
+          <RouterLink class="flex p-5" :to="`/project/${project.id}`">
+            {{ project.name }}
+          </RouterLink>
+          <td>{{ project.taskCount }}</td>
           <td>
-            <progress class="progress progress-primary w-56" value="10" max="100"></progress>
+            <progress
+              class="progress progress-primary w-56"
+              :value="project.completion"
+              max="100"
+            ></progress>
+            {{ project.completion }}%
           </td>
+          <th>
+            <input
+              type="checkbox"
+              class="checkbox checkbox-primary"
+              :checked="project.checkBoxInput"
+            />
+          </th>
         </tr>
       </tbody>
     </table>
@@ -61,6 +79,7 @@ import AddCircle from '@/modules/common/icons/AddCircle.vue';
 import ModalIcol from '@/modules/common/icons/ModalIcol.vue';
 import { ref } from 'vue';
 import { useProjectsStore } from '../store/projects.store';
+import { RouterLink } from 'vue-router';
 
 const modalOpen = ref(false);
 const customModalOpen = ref(false);
