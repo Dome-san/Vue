@@ -2,14 +2,14 @@
   <dialog class="modal" :open="open">
     <div class="modal-box">
       <div class="border-b border-blue-500">
-        <slot name="hearder" />
+        <slot name="header" />
       </div>
       <div class="my-5">
         <slot name="body" />
       </div>
 
       <div class="border-t border-t-blue-500">
-        <slot name="actions" />
+        <slot name="footer" />
       </div>
     </div>
   </dialog>
