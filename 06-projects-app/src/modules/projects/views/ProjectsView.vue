@@ -86,11 +86,11 @@ const customModalOpen = ref(false);
 
 const projectsStore = useProjectsStore();
 
-const onNewValue = (projectName: string) => {
-  projectsStore.projectList.push({
-    id: '3',
-    name: projectName,
-    tasks: [],
-  });
-};
+// const onNewValue = (projectName: string) => {
+//   projectsStore.projectList.push({
+//     id: '3',
+//     name: projectName,
+//     tasks: [],
+//   });
+// };
 </script>

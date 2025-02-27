@@ -1,0 +1,68 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<SideMenu/> > should render with no projects 1`] = `
+"<aside class="bg-base-200 w-72 min-h-screen">
+  <h2 class="text-lg font-bold mx-4">
+    <routerlink to="/"> Proyecto</routerlink>
+  </h2><!-- Menu -->
+  <ul class="menu">
+    <li>
+      <details>
+        <summary>
+          <routerlink to="/project/1">Project 1</routerlink>
+        </summary>
+        <ul>
+          <li>
+            <routerlink to="/project/1">task 1</routerlink>
+          </li>
+          <li>
+            <routerlink to="/project/1">task 2</routerlink>
+          </li>
+          <li>
+            <routerlink to="/project/1">task 3</routerlink>
+          </li>
+          <li>
+            <routerlink to="/project/1">task 4</routerlink>
+          </li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <routerlink to="/project/2">Project 2</routerlink>
+    </li>
+    <li>
+      <details>
+        <summary>
+          <routerlink to="/project/3">Project 3</routerlink>
+        </summary>
+        <ul>
+          <li>
+            <routerlink to="/project/3">task 1</routerlink>
+          </li>
+          <li>
+            <routerlink to="/project/3">task 2</routerlink>
+          </li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>
+          <routerlink to="/project/4">Project 4</routerlink>
+        </summary>
+        <ul>
+          <li>
+            <routerlink to="/project/4">task 1</routerlink>
+          </li>
+          <li>
+            <routerlink to="/project/4">task 2</routerlink>
+          </li>
+          <li>
+            <routerlink to="/project/4">task 3</routerlink>
+          </li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</aside>"
+`;
